@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.util.Log
-import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.lizongying.mytv0.requests.HttpClient
 import kotlinx.coroutines.Dispatchers
@@ -54,7 +53,7 @@ class ImageHelper(private val context: Context) {
     ) {
         val file = files[key]
         if (file != null) {
-            Log.i(TAG, "image exists ${file.absolutePath}")
+            Log.d(TAG, "image exists ${file.absolutePath}")
             return
         }
 
@@ -74,7 +73,7 @@ class ImageHelper(private val context: Context) {
 
     fun loadImage(
         key: String,
-        imageView: ImageView,
+        imageView: androidx.appcompat.widget.AppCompatImageView,
         bitmap: Bitmap,
         url: String,
     ) {
